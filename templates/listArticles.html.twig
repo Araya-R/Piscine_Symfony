@@ -1,19 +1,21 @@
 <html>
-<body>
-    <main>
-    <h2>Liste des articles</h2>
-    
-    {% for article in articles %}
-    <article>
+	<body>
+		<main>
+			<h2>Liste des articles</h2>
 
-    <h3>{{ article.title }}</h3>
-    <p>{{ article.content }}</p>
-    <p>{{ article.created_at | date('y/m/d') }}</p>
-    <img src="{{ article.image }}" alt="">
+			{% for article in articles %}
+				{% if article.is_published %}
 
-    </article>
-    {% endfor %}
+					<article>
+						<h3>{{ article.title }}</h3>
+						<p>{{ article.content }}</p>
+						<p>{{ article.created_at | date('y/m/d') }}</p>
+						<img src="{{ article.image }}" alt="" width="900px">
+					</article>
 
-    </main>
-</body>
+				{% endif %}
+			{% endfor %}
+
+		</main>
+	</body>
 </html>

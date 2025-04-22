@@ -5,10 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ArticleController extends AbstractController{
+class ArticleController extends AbstractController
+{
 
-    #[Route("/list-articles", name:"listArticles")]
-    public function listArticles (){
+    #[Route("/list-articles", name: "listArticles")]
+    public function listArticles()
+    {
 
         $articles = [
             1 => [
@@ -38,8 +40,6 @@ class ArticleController extends AbstractController{
             ]
         ];
 
-        return $this->render('listArticles.html.twig', ['articles'=>$articles]);
+        return $this->render('listArticles.html.twig', ['articles' => $articles]);
     }
-
-    
 }

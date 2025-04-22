@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<main>
+			<h2>Profil</h2>
+
+
+			<article>
+				<p>First Name:
+					{{ profil.firstName }}</p>
+				<p>Last Name:
+					{{ profil.lastName }}</p>
+				<p>Profession :{{ profil.job }}</p>
+
+				<p>Languages :</p>
+				<ul>
+					{% for language in profil.languages %}
+						<li>{{ language }}</li>
+					{% endfor %}
+				</ul>
+				<p>À la recherche d'un emploi :
+					{{profil.looksForJob ? 'Oui' : 'Non'}}</p>
+				<img src="{{ profil.avatar }}" alt="" width="500px">
+			</article>
+
+
+		</main>
+	</body>
+</html>
