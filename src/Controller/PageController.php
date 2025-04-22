@@ -3,6 +3,9 @@
 //définir le chemin du fichier
 namespace App\Controller;
 //remplace le require
+
+//=namespace de la classe Response 
+use Symfony\Component\HttpFoundation\Response;
 //c'est le namespace (chemin) de la classe Route qu'on utilise au dessus des méthodes
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,16 +17,16 @@ class PageController{
     #[Route("/", name:"home")]
     //Je crée une méthode qui me retourne un var_dump
     public function home(){
-        var_dump ('Page accueil');die;
+        return new Response("Bienvenue sur la page d'accueil!", 200);
     }
 
     #[Route ("/propos",name:"about")]
     public function about(){
-        var_dump('Page à Propos');die;
+       return new Response("ABOUT US", 200);
     }
 
     #[Route("/contact", name:"contact")]
     public function contact(){
-        var_dump('Page de contact');die;
+        return new Response("CONTACT US", 200);
     }
 }
