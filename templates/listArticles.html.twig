@@ -1,0 +1,19 @@
+<html>
+<body>
+    <main>
+    <h2>Liste des articles</h2>
+    
+    {% for article in articles %}
+    <article>
+
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.content }}</p>
+    <p>{{ article.created_at | date('y/m/d') }}</p>
+    <img src="{{ article.image }}" alt="">
+
+    </article>
+    {% endfor %}
+
+    </main>
+</body>
+</html>
