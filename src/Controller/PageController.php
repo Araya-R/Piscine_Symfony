@@ -1,6 +1,9 @@
 <?php
 
+//définir le chemin du fichier
 namespace App\Controller;
+//remplace le require
+//c'est le namespace (chemin) de la classe Route qu'on utilise au dessus des méthodes
 use Symfony\Component\Routing\Annotation\Route;
 
 //Je crée une classe HomeController
